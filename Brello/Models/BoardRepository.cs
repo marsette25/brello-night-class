@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
+
 namespace Brello.Models
 {
     public class BoardRepository
@@ -37,6 +38,11 @@ namespace Brello.Models
             context.SaveChanges(); // This saves something to the Database
 
             return my_board;
+        }
+
+        public List<Board> GetAllBoards()
+        {
+            return context.Boards.ToList();
         }
     }
 }
