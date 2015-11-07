@@ -50,5 +50,11 @@ namespace Brello.Models
             
             return query.Count();
         }
+
+        public List<Board> GetBoards(ApplicationUser user1)
+        {
+            var query = from b in context.Boards where b.Owner == user1 select b;
+            return query.ToList<Board>(); // same as query.ToList();
+        }
     }
 }
