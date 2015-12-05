@@ -10,6 +10,8 @@ namespace Brello.Models
     {
         private BoardContext context;
 
+        public IDbSet<ApplicationUser> Users { get { return context.Users; } }
+
         public BoardRepository()
         {
             context = new BoardContext();
